@@ -24,6 +24,8 @@ int main()
         {
             printf("%c", listOfFullNames[i][j]);
             j++;
+        
+        
         }
         
         i != 4 ? printf(", ") : printf(".");
