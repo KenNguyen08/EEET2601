@@ -1,42 +1,80 @@
 #include <stdio.h>
 #include <string.h>
+#include <stddef.h>
+#include <stdlib.h>
+void getName(int order, char* getFullName);
+void useSortListOfName(char *names , int size);
+void swap(char **str1, char **str2);
 
 int main()
 {
-    char names[5][100];
+    char nameList [5][100] ;
+    for(int i =0; i < 5; i++)
+    {   
+        do
+        {
+            getName(i+1, nameList[i]);
+        }
+        while(nameList[i][0] == '\0' || nameList[i][0] == ' ');
 
-    for(int i=0; i < 5; i++)
+
+
+    }
+    
+    //sort array in alphabecal order
+    
+    for(int i = 5 - 1; i > 0; i--)
     {
-        print("enter name %d", i +1);
-        scanf("%[^\n]s", names[i]);
-        getchar();
+        for(int j = 0; j < i; j++)
+        {
+            if(nameList[j][0] > nameList[j+1][0])
+            {
+                int temp[100];
+                strcpy(temp,nameList[j]);
+                strcpy(nameList[j], nameList[j+1]);
+                strcpy(nameList[j+1], temp);
+            }
+        }    
     }
 
-    //sort in alphabetical order
-    char *pointer = *bubbleSort(names, 5);
-    for(int i = 0; i < 5; i++)
+        for(int i = 0; i  < 5; i++)
     {
-        printf("%s", *(pointer + i))
-    } 
+        printf("%s\n", nameList[i]);
+    }
 
+    
+    
     return 0;
 }
-char * bubbleSort(char arr[5][100], int n)
+
+ void getName(int order, char* getFullName)
 {
-   int i, j;
-   for (i = 0; i < n-1; i++)      
-  
-       // Last i elements are already in place   
-       for (j = 0; j < n-i-1; j++) 
-           if (arr[j][0] > arr[j+1][0])
-              swap(&arr[j], &arr[j+1]);
+   
+        printf("Enter Full Name %d: ", order);
+        scanf("%[^\n]s", getFullName);
+        getchar();
     
-    return arr; 
 }
 
-void swap(char *first, char *second)
+void useSortListOfName(char *names, int size)
 {
-    char *temp = second;
+    for(int i = 0; i  < 5; i++)
+    {
+        printf("%s\n", names);
+    }
 
-
+    for( int i = size - 1; i > 0; i--)
+    {
+        for(int j = 0; i < size; j++)
+        {
+        }
+    }
 }
+
+void swap(char **str1, char **str2){
+    char *temp = *str1;
+    *str1 = *str2;
+    *str2 = temp;
+    
+}
+
