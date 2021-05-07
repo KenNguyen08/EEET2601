@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "stddef.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "myarray.h": "c"
     }
 }
