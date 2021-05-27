@@ -3,7 +3,7 @@
 int copy(char const *infile, char const *outfile);
 
 int main() {
-    if (copy("cmd.c", "cmd3.c") == 1) {
+    if (copy("copytext.txt", "copytext2.txt") == 1) {
         printf("File copy was successful\n");
     } else {
         printf("File copy was failed\n");
