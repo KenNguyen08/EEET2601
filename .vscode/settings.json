@@ -2,6 +2,7 @@
     "files.associations": {
         "stddef.h": "c",
         "stdlib.h": "c",
-        "myarray.h": "c"
+        "myarray.h": "c",
+        "stdio.h": "c"
     }
 }
