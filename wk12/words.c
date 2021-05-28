@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <string.h>
 int words(FILE *fp);
 
 int main(int argc, char const *argv[]) {
@@ -9,7 +9,11 @@ int main(int argc, char const *argv[]) {
         return -1;
     }
 
-    FILE *fp = fopen(argv[1], "r");
+    printf("%s", argv[1]);
+    char filename[100];
+    strcpy(filename, argv[1]);
+    char *sp = filename;
+    FILE *fp = fopen(sp, "r");
     if (fp == NULL) {
         printf("Cannot open file %s\n", argv[1]);
         return -2;

@@ -13,11 +13,11 @@ int main() {
 
 int copy(char const *infile, char const *outfile) {
     // Open files for reading and writing
-    FILE *ifp = fopen(infile, "r");
+    FILE *ifp = fopen("copytext.txt", "r");
     if (ifp == NULL) {
         return 0;
     }
-    FILE *ofp = fopen(outfile, "w");
+    FILE *ofp = fopen("copytext2.txt", "w");
     if (ofp == NULL) {
         return 0;
     }
